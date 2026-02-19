@@ -1,0 +1,60 @@
+{
+  "name": "rockfaker",
+  "version": "1.0.0",
+  "description": "Fake data generator with rockstar names – faster, smaller, and seedable. Zero dependencies.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./locales/da": {
+      "types": "./dist/locales/da/index.d.ts",
+      "import": "./dist/locales/da/index.js"
+    },
+    "./locales/en": {
+      "types": "./dist/locales/en/index.d.ts",
+      "import": "./dist/locales/en/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun run tsc",
+    "prepublishOnly": "bun run build",
+    "test": "bun test"
+  },
+  "keywords": [
+    "faker",
+    "fake-data",
+    "mock",
+    "rockstar",
+    "music",
+    "names",
+    "bands",
+    "danish",
+    "seeded",
+    "weighted",
+    "prng",
+    "test-data"
+  ],
+  "author": "Allan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.4.0"
+  }
+}
