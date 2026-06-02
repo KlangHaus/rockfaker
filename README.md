@@ -5,7 +5,11 @@ Fake data generator with rockstar names. Zero dependencies, seeded PRNG, weighte
 ## Install
 
 ```bash
+# npm
 npm install rockfaker
+
+# bun
+bun add rockfaker
 ```
 
 ## Quick Start
@@ -13,45 +17,84 @@ npm install rockfaker
 ```ts
 import { rockstar } from "rockfaker";
 
-rockstar.person.fullName();  // "Iggy Hendrix"
-rockstar.person.stageName(); // "Big Van Halen"
-rockstar.band.name();        // "Led Zeppelin"
-rockstar.band.genre();       // "Thrash Metal"
+rockstar.person.fullName();  // "Ozzy Nicks"
+rockstar.person.stageName(); // "Big Kilmister"
+rockstar.band.name();        // "Nine Inch Nails"
+rockstar.band.genre();       // "Grunge"
 rockstar.band.bio();         // "Black Sabbath is a Doom Metal band formed in 1987..."
-rockstar.band.setlist(4);    // ["Neon Fire", "Crimson River", ...]
+rockstar.band.setlist(4);    // ["Neon Storm", "Iron Highway", "Broken Heart", ...]
 ```
 
-## Danish Locale
+## Locales
+
+Built-in support for English and Danish.
 
 ```ts
-import { rockstarDa } from "rockfaker";
+import { rockstar, rockstarDa, createRockstarFaker } from "rockfaker";
 
+// English (default)
+rockstar.person.fullName(); // "Slash Hendrix"
+
+// Danish
 rockstarDa.person.fullName(); // "Lars Ulrich"
 rockstarDa.band.genre();      // "Viking Metal"
+
+// Switch on the fly
+const faker = createRockstarFaker({ locale: "en" });
+faker.setLocale("da");
+faker.person.fullName(); // "Morten Ørsted"
 ```
 
 ## Seeded Output
 
-Same seed always produces the same sequence — great for tests and snapshots.
+Same seed = same sequence. Great for tests and snapshots.
 
 ```ts
 import { createRockstarFaker } from "rockfaker";
 
-const faker = createRockstarFaker({ seed: 42, locale: "da" });
-faker.person.fullName(); // Always the same result with seed 42
+const a = createRockstarFaker({ seed: 42 });
+const b = createRockstarFaker({ seed: 42 });
+a.person.fullName() === b.person.fullName(); // true
 ```
 
-## Switch Locale On The Fly
+## Weighted Data
+
+Names aren't uniformly distributed. Iconic names like "Slash" and "Hendrix" appear more often than obscure ones — just like in real life.
 
 ```ts
-import { createRockstarFaker } from "rockfaker";
-
-const faker = createRockstarFaker({ locale: "en" });
-faker.person.fullName(); // English rockstar
-
-faker.setLocale("da");
-faker.person.fullName(); // Danish rockstar
+// In the locale data:
+{ value: "Slash", weight: 5 }   // appears often
+{ value: "Trent", weight: 2 }   // appears less
 ```
+
+## Playground
+
+Interactive REPL to try everything out:
+
+```bash
+bun run playground
+```
+
+```
+  rockfaker [en] > name
+  → Ozzy Nicks
+
+  rockfaker [en] > card
+  ┌─────────────────────────────────┐
+  │ Billie "Thunder" Joplin         │
+  │ Nine Inch Nails                 │
+  │ Genre: Grunge                   │
+  │ Album: Blood & Thunder          │
+  └─────────────────────────────────┘
+
+  rockfaker [en] > da
+  → Skiftet til dansk
+
+  rockfaker [da] > name
+  → Lars Hedegaard
+```
+
+Commands: `name`, `first`, `last`, `stage`, `band`, `genre`, `album`, `bio`, `setlist`, `card`, `10`, `da`/`en`, `q`
 
 ## API
 
@@ -62,7 +105,7 @@ faker.person.fullName(); // Danish rockstar
 | `firstName()` | string | `"Slash"` |
 | `lastName()` | string | `"Mercury"` |
 | `fullName()` | string | `"Freddie Mercury"` |
-| `stageName()` | string | `"The Notorious Cobain"` |
+| `stageName()` | string | `"Big Kilmister"` |
 
 ### `band`
 
@@ -91,12 +134,22 @@ Low-level access to the PRNG:
 
 | | FakerJS | rockfaker |
 |---|---|---|
-| Bundle | ~8 MB | < 20 KB |
+| Bundle | ~8 MB | 6.8 KB packed |
 | Dependencies | Several | Zero |
 | PRNG | Mersenne Twister | Mulberry32 (faster) |
 | Weighted data | No | Yes |
 | Seeded | Verbose setup | One-liner |
 | Tree-shakeable | Partial | Full |
+| Playground | No | `bun run playground` |
+
+## Development
+
+```bash
+bun install      # install deps
+bun test         # run tests
+bun run build    # compile to dist/
+bun run playground  # interactive REPL
+```
 
 ## License
 

@@ -27,7 +27,8 @@
   "scripts": {
     "build": "bun run tsc",
     "prepublishOnly": "bun run build",
-    "test": "bun test"
+    "test": "bun test",
+    "playground": "bun run playground.ts"
   },
   "keywords": [
     "faker",
