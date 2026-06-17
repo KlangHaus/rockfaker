@@ -37,7 +37,8 @@
     "fixtures:check": "bun run scripts/generate-fixtures.ts --check",
     "mock:etude": "bunx mockoon-cli start --data mockoon/etude.json --port 4010",
     "mock:stop": "bunx mockoon-cli stop --data mockoon/etude.json",
-    "mock:up": "bun run fixtures:gen && bun run mock:etude"
+    "mock:up": "bun run fixtures:gen && bun run mock:etude",
+    "prepare": "husky"
   },
   "keywords": [
     "faker",
@@ -65,6 +66,7 @@
   "devDependencies": {
     "@mockoon/cli": "^9.4.0",
     "@types/bun": "latest",
+    "husky": "^9.1.7",
     "typescript": "^5.4.0"
   }
 }
