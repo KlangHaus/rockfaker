@@ -1,0 +1,98 @@
+{
+  "tenant": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "slug": "explainers",
+    "status": "active",
+    "primaryDomain": "explainers.dk",
+    "orgId": "00000000-0000-4000-8000-000000000001",
+    "brandTokensRef": "pk_live_explainers"
+  },
+  "brandTokensUrl": "http://localhost:4010/k/pk_live_explainers/tokens.json",
+  "courses": [
+    {
+      "id": "course-1",
+      "slug": "course-1",
+      "title": "Biologi — cellebiologi",
+      "moduleTitle": "Eksamenstræning",
+      "subject": "Oldtidskundskab",
+      "instructor": "Rasmus Larsen"
+    },
+    {
+      "id": "course-2",
+      "slug": "course-2",
+      "title": "Engelsk B — essay writing",
+      "moduleTitle": "Opsamling",
+      "subject": "Oldtidskundskab",
+      "instructor": "Nanna Dickow"
+    },
+    {
+      "id": "course-3",
+      "slug": "course-3",
+      "title": "Samfundsfag — velfærdsstaten",
+      "moduleTitle": "Øvelser og repetition",
+      "subject": "Dansk",
+      "instructor": "Nanna Ørsted"
+    },
+    {
+      "id": "course-4",
+      "slug": "course-4",
+      "title": "Matematik A — differentialregning",
+      "moduleTitle": "Eksamenstræning",
+      "subject": "Oldtidskundskab",
+      "instructor": "DJ Lars Hedegaard"
+    },
+    {
+      "id": "course-5",
+      "slug": "course-5",
+      "title": "Matematik A — differentialregning",
+      "moduleTitle": "Grundbegreber",
+      "subject": "Samfundsfag",
+      "instructor": "Agnes Ulrich"
+    },
+    {
+      "id": "course-6",
+      "slug": "course-6",
+      "title": "Oldtidskundskab — romersk republik",
+      "moduleTitle": "Eksamenstræning",
+      "subject": "Oldtidskundskab",
+      "instructor": "Dr. Bjørk Øland"
+    },
+    {
+      "id": "course-7",
+      "slug": "course-7",
+      "title": "Kemi — organiske forbindelser",
+      "moduleTitle": "Opsamling",
+      "subject": "Engelsk",
+      "instructor": "Rasmus Larsen"
+    },
+    {
+      "id": "course-8",
+      "slug": "course-8",
+      "title": "Samfundsfag — velfærdsstaten",
+      "moduleTitle": "Quiz og test",
+      "subject": "Kemi",
+      "instructor": "Morten Dickow"
+    },
+    {
+      "id": "course-9",
+      "slug": "course-9",
+      "title": "Matematik A — differentialregning",
+      "moduleTitle": "Case og analyse",
+      "subject": "Biologi",
+      "instructor": "Lil' Lukas Rasmussen"
+    },
+    {
+      "id": "course-10",
+      "slug": "course-10",
+      "title": "Fysik — mekanik og energi",
+      "moduleTitle": "Dybdegående gennemgang",
+      "subject": "Dansk",
+      "instructor": "Kim Ulrich"
+    }
+  ],
+  "_meta": {
+    "seed": 42,
+    "locale": "da",
+    "generator": "rockfaker/scripts/generate-fixtures.ts"
+  }
+}

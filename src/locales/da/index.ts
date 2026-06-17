@@ -88,6 +88,42 @@ const da: RockstarLocale = {
       "Torden & Lyn",
     ],
   },
+  education: {
+    courseTitle: [
+      "Matematik A — differentialregning",
+      "Dansk skriftlig",
+      "Engelsk B — essay writing",
+      "Historie — den kolde krig",
+      "Fysik — mekanik og energi",
+      "Kemi — organiske forbindelser",
+      "Biologi — cellebiologi",
+      "Samfundsfag — velfærdsstaten",
+      "Oldtidskundskab — romersk republik",
+      "Idræt — holdtræning",
+    ],
+    moduleTitle: [
+      "Introduktion",
+      "Grundbegreber",
+      "Øvelser og repetition",
+      "Eksamenstræning",
+      "Opsamling",
+      "Case og analyse",
+      "Quiz og test",
+      "Dybdegående gennemgang",
+    ],
+    subject: [
+      "Matematik",
+      "Dansk",
+      "Engelsk",
+      "Historie",
+      "Fysik",
+      "Kemi",
+      "Biologi",
+      "Samfundsfag",
+      "Oldtidskundskab",
+      "Idræt",
+    ],
+  },
 };
 
 export default da;

@@ -101,6 +101,42 @@ const en: RockstarLocale = {
       "The Devil's Jukebox",
     ],
   },
+  education: {
+    courseTitle: [
+      "Calculus I — limits and derivatives",
+      "Academic writing fundamentals",
+      "Physics — classical mechanics",
+      "World history — modern era",
+      "Organic chemistry introduction",
+      "Cell biology essentials",
+      "Macroeconomics principles",
+      "Statistics for beginners",
+      "Public speaking workshop",
+      "Computer science — algorithms",
+    ],
+    moduleTitle: [
+      "Introduction",
+      "Core concepts",
+      "Practice set",
+      "Exam prep",
+      "Recap",
+      "Case study",
+      "Quiz",
+      "Deep dive",
+    ],
+    subject: [
+      "Mathematics",
+      "English",
+      "Physics",
+      "History",
+      "Chemistry",
+      "Biology",
+      "Economics",
+      "Statistics",
+      "Communication",
+      "Computer Science",
+    ],
+  },
 };
 
 export default en;

@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "primary": "#0059b3",
+    "primary_light": "#3381cc",
+    "primary_dark": "#003a7a",
+    "on_primary": "#ffffff",
+    "background": "#ffffff",
+    "text": "#212529"
+  },
+  "fonts": {
+    "display": "IBM Plex Sans",
+    "body": "IBM Plex Sans"
+  },
+  "assets": {
+    "logo_url": "https://cdn.klanghaus.dk/tenants/explainers/logo-light.svg",
+    "logo_dark_url": "https://cdn.klanghaus.dk/tenants/explainers/logo-dark.svg",
+    "favicon_url": "https://cdn.klanghaus.dk/tenants/explainers/favicon.ico",
+    "og_image_url": "https://cdn.klanghaus.dk/tenants/explainers/og.png"
+  },
+  "version": 1,
+  "published_at": "2026-06-01T12:00:00.000Z"
+}

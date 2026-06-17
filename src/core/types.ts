@@ -18,4 +18,9 @@ export interface RockstarLocale {
     genre: DataSource<string>;
     album: DataSource<string>;
   };
+  education: {
+    courseTitle: DataSource<string>;
+    moduleTitle: DataSource<string>;
+    subject: DataSource<string>;
+  };
 }

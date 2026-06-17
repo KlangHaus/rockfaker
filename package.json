@@ -1,7 +1,7 @@
 {
   "name": "rockfaker",
-  "version": "1.0.0",
-  "description": "Fake data generator with rockstar names – faster, smaller, and seedable. Zero dependencies.",
+  "version": "1.1.0",
+  "description": "Seeded fake data for KlangHaus — faker library, JSON fixtures, and Mockoon HTTP stubs",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,10 +17,14 @@
     "./locales/en": {
       "types": "./dist/locales/en/index.d.ts",
       "import": "./dist/locales/en/index.js"
-    }
+    },
+    "./fixtures/*": "./fixtures/*",
+    "./mockoon/*": "./mockoon/*"
   },
   "files": [
     "dist",
+    "fixtures",
+    "mockoon",
     "README.md",
     "LICENSE"
   ],
@@ -28,21 +32,25 @@
     "build": "bun run tsc",
     "prepublishOnly": "bun run build",
     "test": "bun test",
-    "playground": "bun run playground.ts"
+    "playground": "bun run playground.ts",
+    "fixtures:gen": "bun run scripts/generate-fixtures.ts",
+    "fixtures:check": "bun run scripts/generate-fixtures.ts --check",
+    "mock:etude": "bunx mockoon-cli start --data mockoon/etude.json --port 4010",
+    "mock:stop": "bunx mockoon-cli stop --data mockoon/etude.json",
+    "mock:up": "bun run fixtures:gen && bun run mock:etude"
   },
   "keywords": [
     "faker",
     "fake-data",
     "mock",
+    "mockoon",
+    "fixtures",
+    "test-data",
     "rockstar",
-    "music",
-    "names",
-    "bands",
-    "danish",
-    "seeded",
-    "weighted",
-    "prng",
-    "test-data"
+    "education",
+    "klanghaus",
+    "etude",
+    "seeded"
   ],
   "author": "Allan",
   "license": "MIT",
@@ -55,6 +63,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
+    "@mockoon/cli": "^9.4.0",
     "@types/bun": "latest",
     "typescript": "^5.4.0"
   }

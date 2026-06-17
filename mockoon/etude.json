@@ -1,0 +1,258 @@
+{
+  "uuid": "rockfaker-etude-mock-env",
+  "lastMigration": 32,
+  "name": "KlangHaus Etude deps (rockfaker)",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 4010,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "etude-studio-tokens",
+      "type": "http",
+      "documentation": "Grundtone Studio CDN stub — explainers brand tokens",
+      "method": "get",
+      "endpoint": "k/pk_live_explainers/tokens.json",
+      "responses": [
+        {
+          "uuid": "etude-studio-tokens-ok",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Explainers tokens (from fixtures)",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=60, must-revalidate"
+            }
+          ],
+          "bodyType": "FILE",
+          "filePath": "../fixtures/etude/tokens.explainers.json",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "etude-tenant-bootstrap",
+      "type": "http",
+      "documentation": "Etude GET /v1/tenant/bootstrap stub",
+      "method": "get",
+      "endpoint": "v1/tenant/bootstrap",
+      "responses": [
+        {
+          "uuid": "etude-tenant-bootstrap-ok",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Explainers bootstrap",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "FILE",
+          "filePath": "../fixtures/etude/tenant-bootstrap.json",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "etude-demo-courses",
+      "type": "http",
+      "documentation": "Demo course list (rockfaker seed 42)",
+      "method": "get",
+      "endpoint": "v1/demo/courses",
+      "responses": [
+        {
+          "uuid": "etude-demo-courses-ok",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Courses seed 42",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "FILE",
+          "filePath": "../fixtures/etude/courses.seed-42.json",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "auth-jwks",
+      "type": "http",
+      "documentation": "KlangHaus Auth JWKS stub (until auth service runs)",
+      "method": "get",
+      "endpoint": ".well-known/jwks.json",
+      "responses": [
+        {
+          "uuid": "auth-jwks-ok",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Dev JWKS stub",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "FILE",
+          "filePath": "../fixtures/auth/jwks.stub.json",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "notifications-send",
+      "type": "http",
+      "documentation": "Notifications service send stub",
+      "method": "post",
+      "endpoint": "v1/notifications/send",
+      "responses": [
+        {
+          "uuid": "notifications-send-accepted",
+          "body": "{\n  \"id\": \"mock-notification-rockfaker\",\n  \"status\": \"accepted\"\n}",
+          "latency": 0,
+          "statusCode": 202,
+          "label": "Accepted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "permissions-check",
+      "type": "http",
+      "documentation": "Permissions PDP check stub — allow-all until OpenFGA integration",
+      "method": "post",
+      "endpoint": "v1/permissions/check",
+      "responses": [
+        {
+          "uuid": "permissions-check-allow",
+          "body": "{\n  \"allowed\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Allow all (dev stub)",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    { "type": "route", "uuid": "etude-studio-tokens" },
+    { "type": "route", "uuid": "etude-tenant-bootstrap" },
+    { "type": "route", "uuid": "etude-demo-courses" },
+    { "type": "route", "uuid": "auth-jwks" },
+    { "type": "route", "uuid": "notifications-send" },
+    { "type": "route", "uuid": "permissions-check" }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type,Authorization"
+    }
+  ],
+  "proxyReqHeaders": [{ "key": "", "value": "" }],
+  "proxyResHeaders": [{ "key": "", "value": "" }],
+  "data": []
+}

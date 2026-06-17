@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "kid": "rockfaker-dev-stub",
+      "use": "sig",
+      "alg": "RS256",
+      "n": "stub-not-a-real-key-for-local-dev-only",
+      "e": "AQAB"
+    }
+  ]
+}
