@@ -1,0 +1,6 @@
+# Ejerskab bor i repoet, ikke i en besked.
+# [quality] ejer dette repo (Allan-tildeling 2026-08-23). Ejerskabet var indtil
+# nu kun registreret i tab-korrespondance — og et repo uden CODEOWNERS er et
+# repo hvor den næste læser ikke kan se hvem der svarer for det. blog kørte
+# måneder uden ejer netop derfor.
+* @KlangHaus/quality
