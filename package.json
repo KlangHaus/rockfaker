@@ -64,7 +64,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "@mockoon/cli": "^9.4.0",
+    "@mockoon/cli": "^9.8.0",
     "@types/bun": "latest",
     "husky": "^9.1.7",
     "typescript": "^5.4.0"
