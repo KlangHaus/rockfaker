@@ -1,0 +1,43 @@
+name: OSV-Scanner
+
+# 🔴 INGEN branches-filter, med vilje. Et `branches:`-filter faar checket til
+# ALDRIG at rapportere paa PR'er mod andre grene — og et required check der
+# aldrig rapporterer blokerer PR'en for evigt i stedet for at fejle synligt.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: Dependency vuln-scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - name: OSV-Scanner
+        run: |
+          set -e
+          curl -sSfL -o /tmp/osv \
+            https://github.com/google/osv-scanner/releases/download/v2.2.4/osv-scanner_linux_amd64
+          chmod +x /tmp/osv
+          # ASSERTÉR versionen — et printet versionsnummer maaler intet.
+          /tmp/osv --version | grep -qE '(^|[^0-9.])2\.2\.4([^0-9.]|$)' \
+            || { echo "::error::forkert osv-scanner-version"; exit 1; }
+          /tmp/osv scan source --recursive --config=osv-scanner.toml ./
+
+  udloeb:
+    name: Vuln-accepter udloeber
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      # 🔴 EGET JOB, ikke et trin i scanningen. Accepterne skal tjekkes ogsaa
+      # naar scanningen selv fejler — ellers kan en udloebet accept ligge og
+      # gemme sig bag et andet roedt check.
+      - run: python3 scripts/check-osv-ignore-expiry.py osv-scanner.toml

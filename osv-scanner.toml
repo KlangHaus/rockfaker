@@ -1,0 +1,71 @@
+# osv-scanner-accepter for rockfaker.
+#
+# 🔴 HVER accept har en UDLOEBSDATO. En accept uden udloeb er permanent,
+# og 'midlertidigt' bliver varigt uden at nogen beslutter det. Naar datoen
+# passeres, fejler `scripts/check-osv-ignore-expiry.py` og tvinger
+# beslutningen frem igen.
+#
+# Alle nedenstaaende er TRANSITIVE via devDependencyen @mockoon/cli.
+# rockfaker har `dependencies: {}` og udgives ikke — eksponeringen er et
+# dev-vaerktoej, ikke en runtime-flade. Det goer dem ikke harmloese, men
+# det er grunden til at de accepteres kortvarigt frem for at blokere.
+
+[[IgnoredVulns]]
+id = "GHSA-3jxr-9vmj-r5cp"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@2.1.1); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-3jxr-9vmj-r5cp"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@5.0.6); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-4mjr-xmp4-gh2g"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (qs@6.15.2); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-4mjr-xmp4-gh2g"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (qs@6.15.3); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-mh99-v99m-4gvg"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@2.1.1); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-mh99-v99m-4gvg"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@5.0.6); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-qxc2-j82w-r537"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (@faker-js/faker@9.9.0); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-rgw5-rvv9-x895"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@2.1.1); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-rgw5-rvv9-x895"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (brace-expansion@5.0.6); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-v422-hmwv-36x6"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (body-parser@1.20.5); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-x5fp-wj9c-mxmx"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (qs@6.15.2); intet upstream-fix i 9.8.0"
+
+[[IgnoredVulns]]
+id = "GHSA-x5fp-wj9c-mxmx"
+ignoreUntil = 2026-11-06
+reason = "transitiv via @mockoon/cli (qs@6.15.3); intet upstream-fix i 9.8.0"
